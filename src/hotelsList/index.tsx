@@ -8,12 +8,14 @@ interface HotelsListProps {
 
 function HotelsList({hotels} : HotelsListProps) {
   const hotelsList = hotels.map((hotel) => {
-    return (<div key={hotel.name}>{hotel.name}</div>)
+    return (<div key={hotel.name} className='hotelitem'>
+      {hotel.name}
+    </div>)
   })
   
-  return (<>
+  return (<div>
     {hotelsList}
-  </>)
+  </div>)
 }
 
 export default HotelsList
