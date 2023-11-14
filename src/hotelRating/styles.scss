@@ -1,0 +1,31 @@
+@import 'styles/globals.scss';
+
+
+.rhombus-full {
+    background:
+     linear-gradient(to top right   ,$color-sun 49.5%, transparent 50%) top right,
+     linear-gradient(to top left    ,$color-sun 49.5%, transparent 50%) top left,
+     linear-gradient(to bottom right,$color-sun 49.5%, transparent 50%) bottom right,
+     linear-gradient(to bottom left ,$color-sun 49.5%, transparent 50%) bottom left;
+}
+
+.rhombus-half {
+    background:
+        linear-gradient(to top right   ,transparent 49.5%, transparent 50%) top right,
+        linear-gradient(to top left    ,$color-sun 49.5%, transparent 50%) top left,
+        linear-gradient(to bottom right, transparent 49.5%, transparent 50%) bottom right,
+        linear-gradient(to bottom left ,$color-sun 49.5%, transparent 50%) bottom left;
+}
+
+.rhombus {
+    background-size:50% 50%;
+    background-repeat:no-repeat;
+    
+    width:0.8em; 
+    height:1em; 
+    margin: 0 0.2em 0.5em 0;
+}
+
+.hotelrating {
+    display: flex;
+}

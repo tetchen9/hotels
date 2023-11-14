@@ -1,8 +1,10 @@
 
+export type Rating = 1|1.5|2|2.5|3|3.5|4|4.5|5
+
 export type Hotel = {
   name: string,
   price: number,
   roomType: string,
-  rating: number,
+  rating: Rating,
   image: string
 }

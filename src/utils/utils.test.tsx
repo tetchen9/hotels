@@ -6,19 +6,19 @@ const hotels: Hotel[] = [{
   price: 1,
   name: 'string',
   roomType: 'string',
-  rating: 0,
+  rating: 1,
   image: 'string'
 }, {
   price: 3,
   name: 'string',
   roomType: 'string',
-  rating: 0,
+  rating: 1,
   image: 'string'
 }, {
   price: 2,
   name: 'string',
   roomType: 'string',
-  rating: 0,
+  rating: 1,
   image: 'string'
 }]
 
