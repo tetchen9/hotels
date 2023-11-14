@@ -1,0 +1,25 @@
+{
+    "hotels":[
+       {
+          "name":"Oaks on William",
+          "price":282,
+          "room type":"Studio apartment",
+          "rating":4.5,
+          "image":"0a626b13_z.webp"
+       },
+       {
+          "name":"Crowne Plaza Melbourne",
+          "price":449,
+          "room type":"Standard room, no smoking",
+          "rating":3,
+          "image":"0259fb01_z.webp"
+       },
+       {
+          "name":"Novotel Melbourne on Collins",
+          "price":401,
+          "room type":"Delux king room",
+          "rating":2,
+          "image": "3398b9cd_z.webp"
+       }
+    ]
+ }
