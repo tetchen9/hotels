@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import HotelsList from './hotelsList'
 import { Hotel } from '../types'
-import './App.css'
+import './App.scss'
 
 function App() {
   const [hotels, setHotels] = useState<Hotel[]>([])
@@ -15,11 +15,13 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <h1>{`${hotels.length} Hotels available in Melbourne`}</h1>
-      <main>
-        <HotelsList hotels={hotels}></HotelsList>
-      </main>
+    <div className='content-wrapper'>
+      <div className='content'>
+        <h1>{`${hotels.length} Hotels available in Melbourne`}</h1>
+        <main>
+          <HotelsList hotels={hotels}></HotelsList>
+        </main>
+      </div>
     </div>
   );
 }

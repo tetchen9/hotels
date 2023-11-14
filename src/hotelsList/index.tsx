@@ -1,15 +1,13 @@
 import React from 'react'
 import { Hotel } from '../../types'
-import './styles.css'
+import './styles.scss'
 
 interface HotelsListProps {
   hotels: Hotel[]
 }
 
 function HotelsList({hotels} : HotelsListProps) {
-  
   const hotelsList = hotels.map((hotel) => {
-    console.log(hotel.name)
     return (<div key={hotel.name}>{hotel.name}</div>)
   })
   
