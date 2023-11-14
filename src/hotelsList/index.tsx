@@ -1,5 +1,6 @@
 import React from 'react'
 import { Hotel } from '../../types'
+import { sortHotelsByPrice } from '../utils'
 import './styles.scss'
 
 interface HotelsListProps {
@@ -7,9 +8,13 @@ interface HotelsListProps {
 }
 
 function HotelsList({hotels} : HotelsListProps) {
-  const hotelsList = hotels.map((hotel) => {
+
+  const sortedHotels = sortHotelsByPrice(hotels)
+
+  const hotelsList = sortedHotels.map((hotel) => {
     return (<div key={hotel.name} className='hotelitem'>
       {hotel.name}
+      {hotel.price}
     </div>)
   })
   
