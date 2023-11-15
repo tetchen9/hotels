@@ -1,6 +1,5 @@
 @import 'styles/globals.scss';
 
-
 .rhombus-full {
     background:
      linear-gradient(to top right   ,$color-sun 49.5%, transparent 50%) top right,
@@ -18,12 +17,11 @@
 }
 
 .rhombus {
-    background-size:50% 50%;
-    background-repeat:no-repeat;
-    
-    width:0.8em; 
-    height:1em; 
-    margin: 0 0.2em 0.5em 0;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    width: 0.8rem; 
+    height: 1.2rem; 
+    margin: 0 0.3rem 0 0;
 }
 
 .hotelrating {
