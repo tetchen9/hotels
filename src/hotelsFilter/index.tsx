@@ -1,15 +1,19 @@
 import React from 'react'
-import { Hotel } from '../../types'
 import './styles.scss'
+import InputSearch from '../inputSearch'
 
 interface HotelsFilterProps {
-  hotels: Hotel[]
+  setQueryString: (query: string) => void
 }
 
-function HotelsFilter({hotels} : HotelsFilterProps) {
+function HotelsFilter({ setQueryString } : HotelsFilterProps) {
+  const title = 'Filter Results'
 
   return (<div className='filter-wrapper'>
-    some text here
+    <strong>{title}</strong>
+    <br/>
+    <InputSearch setQueryString={setQueryString}></InputSearch>
+
   </div>)
 }
 

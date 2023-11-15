@@ -18,7 +18,7 @@ function HotelRating({rating} : HotelRatingProps) {
         'rhombus-half': isHalf,
         'rhombus-full': !isHalf,
       })
-      return <div className={style}></div>
+      return <div className={style} key={i}></div>
     })
 
   return (
