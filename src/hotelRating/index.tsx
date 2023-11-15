@@ -15,8 +15,8 @@ function HotelRating({rating} : HotelRatingProps) {
     .map((r, i) => {
       const isHalf = hasHalf && i === intRating - 1
       const style = clsx('rhombus', {
-        ['rhombus-half']: isHalf,
-        ['rhombus-full']: !isHalf,
+        'rhombus-half': isHalf,
+        'rhombus-full': !isHalf,
       })
       return <div className={style}></div>
     })

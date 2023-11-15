@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import HotelsList from './hotelsList'
-import HotelsFilter from './hotelsFilter'
-import { Hotel } from '../types'
-import './App.scss'
+import React, { useState, useEffect } from 'react'
+import HotelsList from '../hotelsList'
+import HotelsFilter from '../hotelsFilter'
+import { Hotel } from '../../types'
+import './index.scss'
 
 function App() {
   const [hotels, setHotels] = useState<Hotel[]>([])
@@ -28,11 +28,11 @@ function App() {
           </section>
         </main>
         <aside className='ads'>
-          <img src={'ads.png'}></img>
+          <img src={'ads.png'} alt="advertisement"></img>
         </aside>
       </div>
     </div>
-  );
+  )
 }
 
 export default App
