@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import HotelsList from '../hotelsList'
 import HotelsFilter from '../hotelsFilter'
-import { Hotel } from '../../types'
+import { Hotel, Rating } from '../../types'
 import './index.scss'
 
 function App() {
   const [hotels, setHotels] = useState<Hotel[]>([])
   const [filteredHotels, setFilteredHotels] = useState<Hotel[]>([])
   const [queryString, setQueryString] = useState<string>('')
+  const [rating, setRating] = useState<Rating | null>(null)
 
   useEffect(() => {
     fetch('hotels.json')
@@ -35,7 +36,10 @@ function App() {
           <h1>{`${hotels.length} Hotels available in Melbourne`}</h1>
           <section className='list-wrapper'>
             <div className='filter-section'>
-              <HotelsFilter setQueryString={setQueryString}></HotelsFilter>
+              <HotelsFilter 
+                setQueryString={setQueryString}
+                setRating={setRating}
+              ></HotelsFilter>
             </div>
             <HotelsList hotels={queryString ? filteredHotels : hotels}></HotelsList>
           </section>
