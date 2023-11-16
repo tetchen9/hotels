@@ -15,13 +15,13 @@ function HotelsFilterPanel({ setQueryString, setRatings } : HotelsFilterPanelPro
 
   return (
     <article className='filter-wrapper'>
-      <strong>{title}</strong>
+      <h3>{title}</h3>
 
-      <Accordion title="Hotel name">
+      <Accordion title="Hotel Name">
         <InputSearch setQueryString={setQueryString}></InputSearch>
       </Accordion>
 
-      <Accordion title="Quality rating">
+      <Accordion title="Quality Rating">
         <RatingFilter setRatings={setRatings}></RatingFilter>
       </Accordion>
 

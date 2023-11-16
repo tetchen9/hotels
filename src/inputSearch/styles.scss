@@ -2,21 +2,25 @@
 
 .input-with-button {
     position: relative;
-    height: 2.6rem;
-    width : 80%;
-    margin: 1rem auto;
+    height: 4rem;
+    width : auto;
+    margin: 1.6rem 1.2rem;
   }
   
-.input-with-button input{
-    height: 2.6rem;
+.input-with-button input {
+    height: 4rem;
     width: 100%;
-    padding: .2rem 3rem .2rem .2rem;
+    padding: 1rem 3rem 1rem .6rem;
+    border: 1px solid $color-silver;
+    outline: none;
 }
 
 .input-with-button button {
     position: absolute;
     right: 0;
     top : 0;
-    width: 3rem;
-    height: 2.6rem;
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid $color-silver;
+    color: $color-dove-gray;
 }

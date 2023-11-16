@@ -1,7 +1,16 @@
 @import 'styles/globals.scss';
 
 .filter-wrapper {
-    background-color: $color-gray-sand;
     min-width: 20rem;
-    padding: .6rem;
+    padding: 1rem 1rem 1.6rem;
+    background-color: $color-gray-sand;
+    color: $color-dove-gray;
+    font-size: 1.4rem;
+
+    h3 {
+        margin: 0 0 1rem 0;
+        color: $color-mine-shaft;
+        font-size: 1.6rem;
+        line-height: 3rem;
+    }
 }

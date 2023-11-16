@@ -11,7 +11,10 @@ function InputSearch({setQueryString}: InputSearchProps) {
 
   return (
     <div className='input-with-button'>
-      <input type="text" value={query} 
+      <input 
+        type="text" 
+        value={query} 
+        placeholder='Enter Hotel Name'
         onChange={(e) => setQuery(e.target.value)}
       />
       <button onClick={() => setQueryString(query)}>
