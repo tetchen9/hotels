@@ -20,6 +20,20 @@
           "roomType":"Delux king room",
           "rating":2,
           "image": "3398b9cd_z.webp"
+       },
+       {
+          "name":"Lecco hostel",
+          "price":313,
+          "roomType":"Standard queen room",
+          "rating":5,
+          "image":"e394a620_z.webp"
+       },
+       {
+          "name":"Ilha São Miguel",
+          "price":178,
+          "roomType":"Delux king room",
+          "rating":0,
+          "image": "a1830e51_z.webp"
        }
     ]
  }

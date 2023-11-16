@@ -20,12 +20,12 @@ function App() {
       .then(data => {
           setHotels(data.hotels)
           setFilteredHotels(data.hotels)
-    })
+      })
   }, [])
 
   useEffect(() => {  
     //reset filtering is there's no queries
-    if (!queryString && !ratings?.length ) {
+    if (!queryString && !ratings?.length) {
       setFilteredHotels(hotels)
       return
     } 

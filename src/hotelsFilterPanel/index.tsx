@@ -3,6 +3,7 @@ import './styles.scss'
 import InputSearch from '../inputSearch'
 import { Rating } from '../../types'
 import RatingFilter from '../ratingFilter'
+import Accordion from '../accordion'
 
 interface HotelsFilterPanelProps {
   setQueryString: (query: string) => void
@@ -12,15 +13,20 @@ interface HotelsFilterPanelProps {
 function HotelsFilterPanel({ setQueryString, setRatings } : HotelsFilterPanelProps) {
   const title = 'Filter Results'
 
-  return (<div className='filter-wrapper'>
-    <strong>{title}</strong>
-    <hr/>
-    <InputSearch setQueryString={setQueryString}></InputSearch>
+  return (
+    <article className='filter-wrapper'>
+      <strong>{title}</strong>
 
-    <hr/>
-    <RatingFilter setRatings={setRatings}></RatingFilter>
+      <Accordion title="Hotel name">
+        <InputSearch setQueryString={setQueryString}></InputSearch>
+      </Accordion>
 
-  </div>)
+      <Accordion title="Quality rating">
+        <RatingFilter setRatings={setRatings}></RatingFilter>
+      </Accordion>
+
+    </article>
+  )
 }
 
 export default HotelsFilterPanel
