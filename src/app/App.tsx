@@ -1,49 +1,64 @@
 import React, { useState, useEffect } from 'react'
 import HotelsList from '../hotelsList'
-import HotelsFilter from '../hotelsFilter'
+import HotelsFilterPanel from '../hotelsFilterPanel'
 import { Hotel, Rating } from '../../types'
 import './index.scss'
+import { intersectionOfHotels } from '../utils'
 
 function App() {
   const [hotels, setHotels] = useState<Hotel[]>([])
   const [filteredHotels, setFilteredHotels] = useState<Hotel[]>([])
   const [queryString, setQueryString] = useState<string>('')
-  const [rating, setRating] = useState<Rating[] | null>(null)
+  const [ratings, setRatings] = useState<Rating[] | null>(null)
 
   useEffect(() => {
     fetch('hotels.json')
       .then(res => res.json())
       .then(data => {
-        return setHotels(data.hotels)
+          setHotels(data.hotels)
+          setFilteredHotels(data.hotels)
     })
   }, [])
 
-  useEffect(() => {
-    if (!queryString) {
+  useEffect(() => {  
+    //reset filtering is there's no queries
+    if (!queryString && !ratings?.length ) {
+      setFilteredHotels(hotels)
       return
-    }
-    const filteredHotels = hotels.filter(({ name }) => {
-      return name.toLowerCase()
-        .includes(queryString.toLowerCase())
-    })
-    setFilteredHotels(filteredHotels)
-  }, [queryString, hotels])
+    } 
 
-  console.log(rating)
+    const filteredByName = queryString 
+      ? hotels.filter(({ name }) => {
+          return name.toLowerCase()
+          .includes(queryString.toLowerCase())
+        })
+      : hotels
+
+    const filteredByRating = ratings?.length 
+      ? hotels.filter(({ rating }) => {
+        return ratings.some(r => r === rating)
+      })
+      : hotels
+
+
+    const filteredByAll = intersectionOfHotels(filteredByName, filteredByRating)
+    setFilteredHotels(filteredByAll)
+
+  }, [queryString, ratings, hotels])
 
   return (
     <div className='content-wrapper'>
       <div className='content'>
         <main className='main'>
-          <h1>{`${hotels.length} Hotels available in Melbourne`}</h1>
+          <h1>{`${filteredHotels.length} Hotels available in Melbourne`}</h1>
           <section className='list-wrapper'>
             <div className='filter-section'>
-              <HotelsFilter 
+              <HotelsFilterPanel 
                 setQueryString={setQueryString}
-                setRating={setRating}
-              ></HotelsFilter>
+                setRatings={setRatings}
+              ></HotelsFilterPanel>
             </div>
-            <HotelsList hotels={queryString ? filteredHotels : hotels}></HotelsList>
+            <HotelsList hotels={filteredHotels}></HotelsList>
           </section>
         </main>
         <aside className='ads'>

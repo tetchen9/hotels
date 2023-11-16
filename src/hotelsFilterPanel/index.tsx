@@ -4,12 +4,12 @@ import InputSearch from '../inputSearch'
 import { Rating } from '../../types'
 import RatingFilter from '../ratingFilter'
 
-interface HotelsFilterProps {
+interface HotelsFilterPanelProps {
   setQueryString: (query: string) => void
-  setRating: (rating: Rating[]) => void
+  setRatings: (rating: Rating[]) => void
 }
 
-function HotelsFilter({ setQueryString, setRating } : HotelsFilterProps) {
+function HotelsFilterPanel({ setQueryString, setRatings } : HotelsFilterPanelProps) {
   const title = 'Filter Results'
 
   return (<div className='filter-wrapper'>
@@ -18,9 +18,9 @@ function HotelsFilter({ setQueryString, setRating } : HotelsFilterProps) {
     <InputSearch setQueryString={setQueryString}></InputSearch>
 
     <hr/>
-    <RatingFilter setRating={setRating}></RatingFilter>
+    <RatingFilter setRatings={setRatings}></RatingFilter>
 
   </div>)
 }
 
-export default HotelsFilter
+export default HotelsFilterPanel

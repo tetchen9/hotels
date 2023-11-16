@@ -5,13 +5,14 @@ import HotelRating from '../hotelRating'
 import { getSelectedRatings } from './ratingUtils'
 
 interface RatingFilterProps {
-  setRating: (ratings: Rating[]) => void
+  setRatings: (ratings: Rating[]) => void
 }
 
 const optionLabels: Array<Rating | string> = ['All', 5, 4, 3, 2, 1, 'Unrated']
 
-function RatingFilter({ setRating }: RatingFilterProps) {
+function RatingFilter({ setRatings }: RatingFilterProps) {
   const [options, setOptions] = useState(() => {
+    //add default values to checkbox options
     return optionLabels.map((label) => {
       return {
         label,
@@ -25,14 +26,16 @@ function RatingFilter({ setRating }: RatingFilterProps) {
       ? <HotelRating rating={label as Rating}></HotelRating>
       : label
 
-    return (<div className='checkbox-wrapper' key={label}>
-      <input
-        type="checkbox"
-        checked={isChecked}
-        onChange={() => handleChange(index)}
-        />
-      <label>{labelElement}</label>
-    </div>)
+    return (
+      <div className='checkbox-wrapper' key={label}>
+        <input
+          type="checkbox"
+          checked={isChecked}
+          onChange={() => handleChange(index)}
+          />
+        <label>{labelElement}</label>
+      </div>
+    )
   })
   
   const allIndex = optionLabels.indexOf('All')
@@ -54,7 +57,7 @@ function RatingFilter({ setRating }: RatingFilterProps) {
     const ratings: Rating[] = getSelectedRatings(updatedOptions)
 
     setOptions(updatedOptions)
-    setRating(ratings)
+    setRatings(ratings)
   }
 
   return (

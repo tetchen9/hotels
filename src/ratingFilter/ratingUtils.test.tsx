@@ -32,8 +32,7 @@ describe('getSelectedRatings', () => {
     }]
     
     const ratings = getSelectedRatings(options)
-    expect(ratings.length).toBe(6)
-    expect(ratings[0]).toBe(5)
+    expect(ratings.length).toBe(0)
   })
 
   test('returns an empty array when none are cheked', () => {

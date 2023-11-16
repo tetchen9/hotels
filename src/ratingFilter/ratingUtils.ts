@@ -8,6 +8,7 @@ export type Option = {
 /**
  * Returns an array of Rating, one for each
  * checked ratings ckeckboxes
+ * If 'All' is checked, returns an empty array
  *
  * @param {Option[]} options checkbox values
  * @return {Rating[]} an array of Rating
@@ -26,5 +27,5 @@ export const getSelectedRatings = (options: Option[]): Rating[] => {
     }, [] as Rating[])
   }
 
-  return allIsChecked ? [5, 4, 3, 2, 1, 0] as Rating[] : getRatings()
+  return allIsChecked ? [] : getRatings()
 }
