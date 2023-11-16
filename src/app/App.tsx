@@ -8,7 +8,7 @@ function App() {
   const [hotels, setHotels] = useState<Hotel[]>([])
   const [filteredHotels, setFilteredHotels] = useState<Hotel[]>([])
   const [queryString, setQueryString] = useState<string>('')
-  const [rating, setRating] = useState<Rating | null>(null)
+  const [rating, setRating] = useState<Rating[] | null>(null)
 
   useEffect(() => {
     fetch('hotels.json')
@@ -28,6 +28,8 @@ function App() {
     })
     setFilteredHotels(filteredHotels)
   }, [queryString, hotels])
+
+  console.log(rating)
 
   return (
     <div className='content-wrapper'>

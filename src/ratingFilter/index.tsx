@@ -2,14 +2,15 @@ import React, { useState } from 'react'
 import './styles.scss'
 import { Rating } from '../../types'
 import HotelRating from '../hotelRating'
+import { getSelectedRatings } from './ratingUtils'
 
 interface RatingFilterProps {
-  setRating: (query: Rating) => void
+  setRating: (ratings: Rating[]) => void
 }
 
 const optionLabels: Array<Rating | string> = ['All', 5, 4, 3, 2, 1, 'Unrated']
 
-function RatingFilter({setRating}: RatingFilterProps) {
+function RatingFilter({ setRating }: RatingFilterProps) {
   const [options, setOptions] = useState(() => {
     return optionLabels.map((label) => {
       return {
@@ -18,7 +19,7 @@ function RatingFilter({setRating}: RatingFilterProps) {
       }
     })
   })
-
+  
   const checkboxes = options.map(({label, isChecked}, index) => {
     let labelElement = typeof label === 'number' 
       ? <HotelRating rating={label as Rating}></HotelRating>
@@ -29,20 +30,31 @@ function RatingFilter({setRating}: RatingFilterProps) {
         type="checkbox"
         checked={isChecked}
         onChange={() => handleChange(index)}
-      />
+        />
       <label>{labelElement}</label>
     </div>)
   })
   
-  const handleChange = (index: number) => {
+  const allIndex = optionLabels.indexOf('All')
+
+  const handleChange = (checkedIndex: number) => {
     const updatedOptions = options.map((option, i) => {
-      const { isChecked } = option
+      const { isChecked : wasChecked } = option
+      let isChecked = checkedIndex === i ? !wasChecked : wasChecked
+      // if a number was checked, uncheck 'All'
+      if (i === allIndex && checkedIndex !== allIndex) {
+        isChecked = false
+      }
       return {
         ...option,
-        isChecked: index === i ? !isChecked : isChecked
+        isChecked,
       } 
     })
+
+    const ratings: Rating[] = getSelectedRatings(updatedOptions)
+
     setOptions(updatedOptions)
+    setRating(ratings)
   }
 
   return (
@@ -53,3 +65,5 @@ function RatingFilter({setRating}: RatingFilterProps) {
 }
 
 export default RatingFilter
+
+

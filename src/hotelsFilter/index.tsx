@@ -6,7 +6,7 @@ import RatingFilter from '../ratingFilter'
 
 interface HotelsFilterProps {
   setQueryString: (query: string) => void
-  setRating: (rating: Rating) => void
+  setRating: (rating: Rating[]) => void
 }
 
 function HotelsFilter({ setQueryString, setRating } : HotelsFilterProps) {
