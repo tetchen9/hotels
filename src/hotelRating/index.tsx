@@ -21,11 +21,13 @@ function HotelRating({rating} : HotelRatingProps) {
       return <div className={style} key={i}></div>
     })
 
-  return (
-    <div className="hotel-rating">
-      {rhombuses}
-    </div>
-  )
+  return (<>
+    {!!rating && 
+      <div className="hotel-rating">
+        {rhombuses}
+      </div>
+    }
+  </>)
 }
 
 export default HotelRating
