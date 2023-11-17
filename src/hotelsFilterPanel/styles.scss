@@ -5,12 +5,12 @@
     padding: 1rem 1rem 1.6rem;
     background-color: $color-gray-sand;
     color: $color-dove-gray;
-    font-size: 1.4rem;
+    font-size: $font-s;
 
     h3 {
         margin: 0 0 1rem 0;
         color: $color-mine-shaft;
-        font-size: 1.6rem;
+        font-size: $font-r;
         line-height: 3rem;
     }
 }

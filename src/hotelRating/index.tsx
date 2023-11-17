@@ -22,7 +22,7 @@ function HotelRating({rating} : HotelRatingProps) {
     })
 
   return (
-    <div className="hotelrating">
+    <div className="hotel-rating">
       {rhombuses}
     </div>
   )
