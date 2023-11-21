@@ -44,9 +44,6 @@ function HotelsPanel() {
   const title = `${total} Hotel${suffix} available in Melbourne`
   
   return (<>
-    <button className='mobile-menu-button'>
-      Menu
-    </button>
     <h1>{title}</h1>
     <section className='list-wrapper'>
       <aside className={'filter-section'}>
