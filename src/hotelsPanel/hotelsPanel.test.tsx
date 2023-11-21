@@ -1,9 +1,9 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import App from './App'
+import HotelsPanel from '.'
 
-test('renders the app', () => {
-  render(<App />)
+test('renders the title', () => {
+  render(<HotelsPanel />)
   const header = screen.getByText(/Hotels available in Melbourne/i)
   expect(header).toBeInTheDocument()
 })

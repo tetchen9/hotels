@@ -9,14 +9,14 @@ interface HotelRatingProps {
 
 function HotelRating({rating} : HotelRatingProps) {
   const intRating = Math.ceil(rating)
-  const hasHalf = intRating > rating
+  const isDecimal = intRating > rating
 
   const rhombuses = Array.from(Array(intRating))
     .map((r, i) => {
-      const isHalf = hasHalf && i === intRating - 1
+      const isHalfRhombus = isDecimal && i === intRating - 1
       const style = clsx('rhombus', {
-        'rhombus-half': isHalf,
-        'rhombus-full': !isHalf,
+        'rhombus-half': isHalfRhombus,
+        'rhombus-full': !isHalfRhombus,
       })
       return <div className={style} key={i}></div>
     })

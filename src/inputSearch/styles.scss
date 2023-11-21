@@ -14,19 +14,23 @@
     border: 1px solid $color-silver;
     border-radius: .4rem;
     outline: none;
+
+    &::placeholder {
+        color: $color-silver;
+    }
 }
 
 .input-with-button button {
     position: absolute;
     right: 0;
     top : 0;
-    width: 4rem;
+    width: 4.6rem;
     height: 4rem;
     border: 1px solid $color-silver;
-    color: $color-dove-gray;
     border-radius: 0 .4rem .4rem 0;
+    color: $color-silver;
 
     &:hover {
-        background-color: $color-silver;
+        background-color: $color-gray-sand;
     }
 }

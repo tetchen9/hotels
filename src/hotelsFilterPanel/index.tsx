@@ -12,16 +12,18 @@ interface HotelsFilterPanelProps {
 
 function HotelsFilterPanel({ setQueryString, setRatings } : HotelsFilterPanelProps) {
   const title = 'Filter Results'
+  const nameFilterAccordionTitle = 'Hotel Name'
+  const ratingFilterAccordionTitle = 'Quality Rating'
 
   return (
     <article className='filter-wrapper'>
       <h3>{title}</h3>
 
-      <Accordion title="Hotel Name">
+      <Accordion title={nameFilterAccordionTitle}>
         <InputSearch setQueryString={setQueryString}></InputSearch>
       </Accordion>
 
-      <Accordion title="Quality Rating">
+      <Accordion title={ratingFilterAccordionTitle}>
         <RatingFilter setRatings={setRatings}></RatingFilter>
       </Accordion>
 

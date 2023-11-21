@@ -1,4 +1,4 @@
-import { Option, getSelectedRatings } from './ratingUtils'
+import { Option, RATING_ALL, getSelectedRatings } from './ratingUtils'
 
 describe('getSelectedRatings', () => {
   test('makes an array of ratings from a list of checked options', () => {
@@ -21,7 +21,7 @@ describe('getSelectedRatings', () => {
 
   test('makes an array of ratings from a list of checked options with All checked', () => {
     const options: Option[] = [{
-      label: 'All',
+      label: RATING_ALL,
       isChecked: true,
     }, {
       label: 2,
@@ -37,7 +37,7 @@ describe('getSelectedRatings', () => {
 
   test('returns an empty array when none are cheked', () => {
     const options: Option[] = [{
-      label: 'All',
+      label: RATING_ALL,
       isChecked: false,
     }, {
       label: 2,

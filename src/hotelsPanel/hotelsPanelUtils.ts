@@ -1,9 +1,5 @@
 import { Hotel, Rating } from '../../types'
 
-export const sortHotelsByPrice = (hotels: Hotel[]) => {
-    return hotels.sort((a,b) => a.price - b.price)
-}
-
 /**
  * Returns an array that contains all items of arrayA 
  * that alse exist in arrayB. It is assumes that the name of the hotel 

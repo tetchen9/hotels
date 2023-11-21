@@ -12,7 +12,7 @@
 .content {
     min-height: 100%;
     width: 100%;
-    margin: 3.6em 0 0 0;
+    margin: 4em 0 0 0;
     display: flex;
     background-color: $color-white;
 
@@ -37,32 +37,4 @@
 .main {
     flex-grow: 1;
     padding: 0.6em;
-}
-
-.list-wrapper {
-    @media (min-width: $breakpoint-desktop) {
-        display: grid;
-        width: 100%;
-        min-height: 100%;
-        grid-template-columns: 1fr 3fr;
-        column-gap: 1em;
-    }
-}
-
-.filter-section {
-    display: none;
-    @media (min-width: $breakpoint-desktop) {
-        display: block;
-    }
-}
-
-h1 {
-    margin: 1rem 0 2rem;
-    color: $color-primary-red;
-    font-weight: 600;
-    font-size: $font-xl;
-    
-    @media (min-width: $breakpoint-desktop) {
-        font-size: $font-l;
-    }
 }

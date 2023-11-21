@@ -1,5 +1,9 @@
 import { Hotel } from '../../types'
-import { sortHotelsByPrice, intersectionOfHotels, filterHotelsByRating, filterHotelsByName } from '.'
+import { 
+  intersectionOfHotels, 
+  filterHotelsByRating, 
+  filterHotelsByName,
+} from './hotelsPanelUtils'
 
 const hotels: Hotel[] = [{
   price: 1,
@@ -33,23 +37,13 @@ const hotels: Hotel[] = [{
   image: 'string'
 }]
 
-describe('sortHotelsByPrice', () => {
-  test('sorts hotels by prices correctly', () => {
-    const sorted = sortHotelsByPrice(hotels)
-    expect(sorted[0].price).toBe(1)
-    expect(sorted[1].price).toBe(2)
-    expect(sorted[2].price).toBe(3)
-    expect(sorted[3].price).toBe(5)
-  })
-})
-
 describe('filterHotelsByRating', () => {
   test('filters hotels by rating correctly', () => {
     const filtered = filterHotelsByRating(hotels, [1, 2, 5])
     expect(filtered.length).toBe(4)
     expect(filtered[0].rating).toBe(1)
-    expect(filtered[1].rating).toBe(2.5)
-    expect(filtered[2].rating).toBe(1.5)
+    expect(filtered[1].rating).toBe(1.5)
+    expect(filtered[2].rating).toBe(2.5)
     expect(filtered[3].rating).toBe(2)
   })
 
@@ -73,7 +67,6 @@ describe('filterHotelsByName', () => {
 })
 
 describe('intersectionOfHotels', () => {
-  
   const hotelsB: Hotel[] = [{
     price: 1,
     name: 'string1',
