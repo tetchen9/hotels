@@ -1,4 +1,4 @@
-import { Rating } from '../../types'
+import { Rating } from '../../../types'
 
 export const RATING_ALL = 'All'
 

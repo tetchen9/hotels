@@ -1,7 +1,7 @@
 import React from 'react'
-import { breakpointTabletPx } from '../const'
-import { Hotel } from '../../types'
-import HotelRating from '../hotelRating'
+import { breakpointTabletPx } from '../../const'
+import { Hotel } from '../../../types'
+import HotelRating from '../../hotelRating'
 import './styles.scss'
 
 interface HotelCardProps {

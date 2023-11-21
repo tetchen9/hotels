@@ -1,9 +1,9 @@
 import React from 'react'
 import './styles.scss'
-import InputSearch from '../inputSearch'
+import InputSearch from './inputSearch'
 import { Rating } from '../../types'
-import RatingFilter from '../ratingFilter'
-import Accordion from '../accordion'
+import RatingFilter from './ratingFilter'
+import Accordion from './accordion'
 
 interface HotelsFilterPanelProps {
   setQueryString: (query: string) => void

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Hotel } from '../../types'
 import { sortHotelsByPrice } from './hotelsListUtils'
-import HotelCard from '../hotelCard'
+import HotelCard from './hotelCard'
 import './styles.scss'
 
 interface HotelsListProps {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Rating } from '../../types'
-import HotelRating from '../hotelRating'
+import { Rating } from '../../../types'
+import HotelRating from '../../hotelRating'
 import { Option, RATING_ALL, getSelectedRatings } from './ratingUtils'
 import './styles.scss'
 
