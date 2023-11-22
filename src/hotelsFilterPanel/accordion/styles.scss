@@ -6,8 +6,8 @@
         display: block;
         width: 100%;
         position: relative; 
-        margin: .2em 0 1em 0;
-        padding: 0 0 0 2rem;
+        margin: $space-xs 0 $space-r 0;
+        padding: 0 0 0 $space-xxl;
         font-size: $font-s;
         line-height: 3rem;
     }

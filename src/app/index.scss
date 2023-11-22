@@ -13,12 +13,12 @@
 .content {
     min-height: 100%;
     width: 100%;
-    margin: 4em 0 0 0;
+    margin: 6.2rem 0 0 0;
     display: flex;
     background-color: $color-white;
 
     @media (min-width: $breakpoint-desktop) {
-        margin: 4em 2em 0 2em;
+        margin: 6.2rem $space-xxl 0 $space-xxl;
     }
 }
 
@@ -26,7 +26,7 @@
     display: none;
     @media (min-width: $breakpoint-desktop) {
         display: block;
-        padding: 1em;
+        padding: $space-r;
         img {
             width: 10rem;
             height: 40rem;
@@ -37,10 +37,10 @@
 
 .main {
     flex-grow: 1;
-    padding: 1.4rem;
+    padding: $space-l;
 
     @media (min-width: $breakpoint-desktop) {
-        padding: 1rem;
+        padding: $space-r;
     }
 }
 
@@ -50,8 +50,8 @@
     top: 1.2rem;
     left: 1.4rem;
     height: 4rem;
-    padding: .2rem 1rem;
-    border-radius: .4rem;
+    padding: $space-xs $space-r;
+    border-radius: $border-radius-s;
     border: 1px solid $color-white;
     background-color: transparent;
     color: $color-white;

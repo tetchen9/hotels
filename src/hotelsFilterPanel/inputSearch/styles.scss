@@ -4,15 +4,15 @@
     position: relative;
     height: 4rem;
     width : auto;
-    margin: 1.6rem 1.2rem;
+    margin: $space-xl $space-l;
   }
   
 .input-with-button input {
     height: 4rem;
     width: 100%;
-    padding: 1rem 3rem 1rem .6rem;
+    padding: $space-r $space-xxxl $space-r $space-s;
     border: 1px solid $color-silver;
-    border-radius: .4rem;
+    border-radius: $border-radius-s;
     outline: none;
 
     &::placeholder {
@@ -27,7 +27,7 @@
     width: 4.6rem;
     height: 4rem;
     border: 1px solid $color-silver;
-    border-radius: 0 .4rem .4rem 0;
+    border-radius: 0 $border-radius-s $border-radius-s 0;
     color: $color-silver;
 
     &:hover {
